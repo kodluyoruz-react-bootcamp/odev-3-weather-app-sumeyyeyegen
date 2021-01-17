@@ -1,21 +1,17 @@
 import React from 'react';
+import { ForecastProvider } from "./contexts/ForecastContext";
 import './App.css';
+import WeatherList from './components/WeatherList';
 import Dropdown from './components/Dropdown';
-import InstantWeather from './components/InstantWeather';
-import WeeklyWeather from './components/WeeklyWeather';
-
 
 const App = () => {
-  // destructure the returned values
-  //const { data, error, isLoading, setUrl } = UseFetch();
-  //console.log(data);
-
   return (
-    <div className="container">
-      <Dropdown />
-      <InstantWeather />
-      <WeeklyWeather />
-    </div>
+    <ForecastProvider>
+      <div className="App">
+        <Dropdown />
+        <WeatherList />
+      </div>
+    </ForecastProvider>
   );
 };
 

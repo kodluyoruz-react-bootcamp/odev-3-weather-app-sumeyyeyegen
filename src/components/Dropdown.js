@@ -1,18 +1,23 @@
-import React, { useContext } from 'react'
-import { ForecastContext } from "../contexts/ForecastContext";
+import React from 'react'
+import { useContext } from "react";
 import { cities } from '../const/cities';
-
+import ForecastContext from "../contexts/ForecastContext";
 const Dropdown = () => {
-    const { setCity } = useContext(ForecastContext);
-
+    const { city, setCity } = useContext(ForecastContext);
     const changeHandler = (e) => {
         setCity(e.target.value);
-    };
+    }
     return (
-        <div className="container d-flex justify-content-center">
-            <h5>İl Seçiniz</h5>
-            <form action="" name="city" type="submit" className="mb-4" onChange={changeHandler}>{cities}</form>
-        </div>
+        <select style={{ padding: 10 }}
+            onChange={changeHandler}
+            defaultValue={city}
+        >
+            {cities.map((city) => (
+                <option key={city.id} value={city.name}>
+                    {city.name}
+                </option>
+            ))}
+        </select>
     )
 }
 export default Dropdown

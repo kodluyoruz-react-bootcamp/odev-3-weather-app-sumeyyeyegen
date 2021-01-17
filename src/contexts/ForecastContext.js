@@ -1,6 +1,9 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
+import axios from 'axios'
+import { API_KEY, API_BASE_URL } from '../apis/config'
+const ForecastContext = createContext({});
 
-export const ForecastContext = createContext();
+//const days = ['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi', 'Pazar']
 
 export const ForecastProvider = ({ children }) => {
     const [city, setCity] = useState('İzmir');
@@ -9,12 +12,19 @@ export const ForecastProvider = ({ children }) => {
             temp: null,
             maxTemp: null,
             minTemp: null,
-            date: null,
             day: null,
+            date: null,
             iconCode: null,
             description: null
         },
-    ])
+    ]);
+    useEffect(() => {
+        const forecast = axios.get(`${API_BASE_URL}?city=${city}&days=7&key=${API_KEY}`)
+        forecast
+            .then(res => { return res })
+            .then(d => { return d.data.data })
+            .then(res => { return setData(res) })
+    }, [city, setData]);
 
     const values = {
         city,
@@ -30,3 +40,4 @@ export const ForecastProvider = ({ children }) => {
         </ForecastContext.Provider>
     )
 }
+export default ForecastContext;

@@ -1,27 +1,28 @@
-import React from 'react'
-import InstantWeather from './InstantWeather'
+import React, { useContext } from 'react'
+import ForecastContext from '../contexts/ForecastContext'
+import WeatherCard from './WeatherCard'
 
-const WeatherList = ({ weathers }) => {
+const WeatherList = () => {
+    const { data } = useContext(ForecastContext);
     return (
         <div className="container">
             <div className="row">
-                {/* {console.log(weathers)} */}
-                {weathers.map(({ datetime, max_temp, min_temp, weather }) => (
-                    <div className="col" key={datetime} >
-                        <InstantWeather
-                            description={weather.description}
-                            max_temp={max_temp}
-                            min_temp={min_temp}
-                            datetime={datetime}
-                            icon={weather.icon}
+                {data.length && data.map((d, i) => (
+                    <div className="col" key={i} >
+                        <WeatherCard
+                            description={d.weather.description}
+                            temp={d.temp}
+                            maxTemp={d.max_temp}
+                            minTemp={d.min_temp}
+                            datetime={d.datetime}
+                            iconCode={d.weather.icon}
                         />
-                        { console.log(weather)}
                     </div>
-                ))
-                }
+                ))};
             </div >
         </div>
     )
+
 }
 
 export default WeatherList;
