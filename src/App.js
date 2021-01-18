@@ -10,6 +10,7 @@ const App = () => {
       <div className="App">
         <Dropdown />
         <WeatherList />
+        {/* {console.log(process.env.REACT_APP_API_KEY)} */}
       </div>
     </ForecastProvider>
   );

@@ -8,8 +8,8 @@ export const ForecastProvider = ({ children }) => {
     const [city, setCity] = useState('İstanbul');
     const [data, setData] = useState([]);
     useEffect(() => {
-        const key = process.env.REACT_APP_API_KEY;
-        const forecast = axios.get(`${API_BASE_URL}?city=${city}&days=7&key=${key}`)
+        //const key = process.env.REACT_APP_API_KEY;
+        const forecast = axios.get(`${API_BASE_URL}?city=${city}&days=7&key=50c0748e2c8f4983af9f622c133b8701`)
         forecast
             .then(res => { return res })
             .then(d => { return d.data.data })
