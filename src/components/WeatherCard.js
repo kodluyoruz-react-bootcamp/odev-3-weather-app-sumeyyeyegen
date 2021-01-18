@@ -5,9 +5,9 @@ const WeatherCard = ({ temp, maxTemp, minTemp, datetime, weather, day }) => {
     day = days[d.getDay()]
     return (
         <div className="card" style={styles.card}>
-            <img alt="" src={`https://www.weatherbit.io/static/img/icons/${weather.icon}.png`} />
+            <img alt="" src={`https://www.weatherbit.io/static/img/icons/${weather?.icon}.png`} />
             <div>
-                <h3>{weather.description}</h3>
+                <h3>{weather?.description}</h3>
                 <p>{day}</p>
                 <p>{datetime}</p>
                 <p>Temp: {temp}</p>
