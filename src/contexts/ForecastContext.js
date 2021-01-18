@@ -14,8 +14,8 @@ export const ForecastProvider = ({ children }) => {
             minTemp: null,
             day: null,
             date: null,
-            iconCode: null,
-            description: null
+            weather: { icon: "", description: "" },
+            now: ""
         },
     ]);
     useEffect(() => {

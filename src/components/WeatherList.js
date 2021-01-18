@@ -5,22 +5,23 @@ import WeatherCard from './WeatherCard'
 const WeatherList = () => {
     const { data } = useContext(ForecastContext);
     return (
-        <div className="container">
-            <div className="row">
-                {data.length && data.map((d, i) => (
+        <div className="row">
+            {console.log(data)}
+            {
+                data.length && data.map((d, i) =>
                     <div className="col" key={i} >
+                        {console.log(data)}
                         <WeatherCard
-                            description={d.weather.description}
                             temp={d.temp}
                             maxTemp={d.max_temp}
                             minTemp={d.min_temp}
                             datetime={d.datetime}
-                            iconCode={d.weather.icon}
+                            weather={d.weather}
+                            day=""
                         />
                     </div>
-                ))};
-            </div >
-        </div>
+                )}
+        </div >
     )
 
 }

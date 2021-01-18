@@ -1,10 +1,12 @@
-
-const WeatherCard = ({ description, temp, maxTemp, minTemp, datetime, iconCode }) => {
+import styles from '../App.css';
+const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+const WeatherCard = ({ temp, maxTemp, minTemp, datetime, weather, day }) => {
     return (
-        <div className="card">
-            <img alt="" src={`https://www.weatherbit.io/static/img/icons/${iconCode}.png`} />
+        <div className="card" style={styles.card}>
+            <img alt="" src={`https://www.weatherbit.io/static/img/icons/${weather.icon}.png`} />
             <div>
-                <h3>{description}</h3>
+                <h3>{weather.description}</h3>
+                <p>{day}</p>
                 <p>{datetime}</p>
                 <p>Temp: {temp}</p>
                 <p>
