@@ -8,11 +8,9 @@ const WeatherList = () => {
     return (
         <div className="list" style={styles.list}>
             <div className="row">
-                {console.log(data)}
                 {
                     data.length && data.map((d, i) =>
                         <div className="col" key={i} >
-                            {console.log(data)}
                             <WeatherCard
                                 temp={d.temp}
                                 maxTemp={d.max_temp}
