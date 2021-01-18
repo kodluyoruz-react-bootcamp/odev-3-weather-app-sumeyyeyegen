@@ -6,16 +6,7 @@ const ForecastContext = createContext({});
 
 export const ForecastProvider = ({ children }) => {
     const [city, setCity] = useState('İzmir');
-    const [data, setData] = useState([
-        {
-            temp: null,
-            maxTemp: null,
-            minTemp: null,
-            day: null,
-            date: null,
-            weather: { icon: "", description: "" },
-        },
-    ]);
+    const [data, setData] = useState([]);
     useEffect(() => {
         const key = process.env.REACT_APP_API_KEY;
         const forecast = axios.get(`${API_BASE_URL}?city=${city}&days=7&key=${key}`)
