@@ -1,14 +1,16 @@
 .App {
 	text-align: center;
 	min-height: 100vh;
+	margin-top: 50px;
 }
 .row {
-	display: flex;
-	justify-content: center;
 	margin: 15px 0;
 }
 .card {
 	min-height: 27rem;
 	height: 27rem;
 	padding: 2px;
+}
+.row .col:first-child .card {
+	border: 2px solid gray;
 }

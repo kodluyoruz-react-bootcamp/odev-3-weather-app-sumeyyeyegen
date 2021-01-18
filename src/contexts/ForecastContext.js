@@ -3,8 +3,6 @@ import axios from 'axios'
 import { API_KEY, API_BASE_URL } from '../apis/config'
 const ForecastContext = createContext({});
 
-//const days = ['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi', 'Pazar']
-
 export const ForecastProvider = ({ children }) => {
     const [city, setCity] = useState('İzmir');
     const [data, setData] = useState([
@@ -15,7 +13,6 @@ export const ForecastProvider = ({ children }) => {
             day: null,
             date: null,
             weather: { icon: "", description: "" },
-            now: ""
         },
     ]);
     useEffect(() => {
