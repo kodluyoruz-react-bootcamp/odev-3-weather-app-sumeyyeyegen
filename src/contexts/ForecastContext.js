@@ -5,7 +5,7 @@ require('dotenv').config({ path: '../env' })
 const ForecastContext = createContext({});
 
 export const ForecastProvider = ({ children }) => {
-    const [city, setCity] = useState('İzmir');
+    const [city, setCity] = useState('İstanbul');
     const [data, setData] = useState([]);
     useEffect(() => {
         const key = process.env.REACT_APP_API_KEY;
