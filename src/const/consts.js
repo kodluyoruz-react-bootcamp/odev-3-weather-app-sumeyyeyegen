@@ -649,4 +649,4 @@ export const cities = [
     },
 ];
 
-export const API_BASE_URL = 'http://api.weatherbit.io/v2.0/forecast/daily';
+export const API_BASE_URL = 'https://api.weatherbit.io/v2.0/forecast/daily';
