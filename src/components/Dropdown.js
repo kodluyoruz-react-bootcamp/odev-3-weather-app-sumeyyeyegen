@@ -1,6 +1,6 @@
 import React from 'react'
 import { useContext } from "react";
-import { cities } from '../const/cities';
+import { cities } from '../const/consts';
 import ForecastContext from "../contexts/ForecastContext";
 const Dropdown = () => {
     const { city, setCity } = useContext(ForecastContext);

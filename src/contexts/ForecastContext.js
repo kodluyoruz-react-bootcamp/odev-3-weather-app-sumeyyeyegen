@@ -1,6 +1,7 @@
 import { useState, createContext, useEffect } from "react";
 import axios from 'axios'
-import { API_KEY, API_BASE_URL } from '../apis/config'
+import { API_BASE_URL } from '../const/consts'
+require('dotenv').config({ path: '../env' })
 const ForecastContext = createContext({});
 
 export const ForecastProvider = ({ children }) => {
@@ -16,7 +17,8 @@ export const ForecastProvider = ({ children }) => {
         },
     ]);
     useEffect(() => {
-        const forecast = axios.get(`${API_BASE_URL}?city=${city}&days=7&key=${API_KEY}`)
+        const key = process.env.REACT_APP_API_KEY;
+        const forecast = axios.get(`${API_BASE_URL}?city=${city}&days=7&key=${key}`)
         forecast
             .then(res => { return res })
             .then(d => { return d.data.data })
