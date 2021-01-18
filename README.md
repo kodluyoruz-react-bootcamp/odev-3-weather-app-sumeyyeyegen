@@ -1,5 +1,5 @@
 # Getting Started with Create React App
-[Netlify Linki](https://6004beee0c5c780d2b7c837f--vibrant-boyd-15b316.netlify.app/)
+[Netlify Linki](https://60061e43f99bb70007d2b317--elated-mahavira-3c40e4.netlify.app/)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
