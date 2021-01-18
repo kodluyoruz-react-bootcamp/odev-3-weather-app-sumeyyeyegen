@@ -1,6 +1,8 @@
 import styles from '../App.css';
 const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 const WeatherCard = ({ temp, maxTemp, minTemp, datetime, weather, day }) => {
+    const d = new Date(datetime);
+    day = days[d.getDay()]
     return (
         <div className="card" style={styles.card}>
             <img alt="" src={`https://www.weatherbit.io/static/img/icons/${weather.icon}.png`} />
